@@ -312,6 +312,8 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
 
 void eeconfig_init_kb(void) {
     g_charybdis_config.raw = 0;
+    g_charybdis_config.pointer_default_dpi = 5;
+    g_charybdis_config.pointer_sniping_dpi = 3;
     write_charybdis_config_to_eeprom(&g_charybdis_config);
     maybe_update_pointing_device_cpi(&g_charybdis_config);
     eeconfig_init_user();
